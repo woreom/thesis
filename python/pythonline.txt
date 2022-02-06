@@ -1,0 +1,726 @@
+In [1]: a= a = np.random.randn(100, 100)
+
+In [2]: %timeit np.dot(a, a)
+10000 loops, best of 3: 20.9 μs per loop
+In [3]: %debug?
+Docstring:
+::
+
+	%debug [--breakpoint FILE:LINE] [statement [statement ...]]
+
+Activate the interactive debugger.
+This magic command support two ways of activating debugger.
+One is to activate debugger before executing code. This way, you
+can set a break point, to step through the code from the point.
+You can use this mode by giving statements to execute and optionally
+a breakpoint.
+
+The other one is to activate debugger in post-mortem mode. You can
+activate this mode simply running %debug without any argument.
+If an exception has just occurred, this lets you inspect its stack
+frames interactively. Note that this will always work only on the last
+traceback that occurred, so you must call this quickly after an
+exception that you wish to inspect has fired, because if another one
+occurs, it clobbers the previous one.
+
+If you want IPython to automatically do this on every exception, see
+the %pdb magic for more details.
+
+positional arguments:
+statement 				Code to run in debugger. You can omit this in cell
+						magic mode.
+
+optional arguments:
+--breakpoint <FILE:LINE>, -b <FILE:LINE>
+					  Set break point at LINE in FILE.
+In [4]: %pwd
+Out[4]: '/home/wesm/code/pydata-book'
+In [5]: foo = %pwd
+In [6]: foo
+Out[6]: '/home/wesm/code/pydata-book'
+In [7]: path = 'example/random_text.txt'
+In [8]: f = open(path)
+In [9]: lines = [x.rstrip() for x in f]
+In [10]: for l in lines: print l
+Out[10]:
+"The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!"
+In [11]: f.close()
+In [12]: with open(path) as f:
+   .....: lines = [x.rstrip() for x in f]
+In [13]: f = open(path)
+In [14]: f.read(10)
+Out[14]: '"The Zen o'
+In [15]: f.read(11)
+Out[15]: 'f Python, b'
+In [16]: f.read()
+Out[16]: 'y Tim Peters\n\nBeautiful is better than ugly.\nExplicit is better than implicit.\nSimple is better than complex.\nComplex is better than complicated.\nFlat is better than nested.\nSparse is better than dense.\nReadability counts.\nSpecial cases aren\'t special enough to break the rules.\nAlthough practicality beats purity.\nErrors should never pass silently.\nUnless explicitly silenced.\nIn the face of ambiguity, refuse the temptation to guess.\nThere should be one-- and preferably only one --obvious way to do it.\nAlthough that way may not be obvious at first unless you\'re Dutch.\nNow is better than never.\nAlthough never is often better than *right* now.\nIf the implementation is hard to explain, it\'s a bad idea.\nIf the implementation is easy to explain, it may be a good idea.\nNamespaces are one honking great idea -- let\'s do more of those!"\n'
+In [17]: f.read()
+Out[17]: ''
+In [18]: f.seek(10)
+Out[18]: 10
+In [19]: f.read(11)
+Out[19]: 'f Python, b'
+In [1]: import pandas as pd
+In [2]: from pandas import Series, DataFrame
+In [11]: obj = pd.Series([4, 7, -5, 3])
+In [12]: obj
+Out[12]:
+0     4
+1     7
+2    -5
+3     3
+dtype: int64
+In [13]: obj.values
+Out[13]: array([ 4, 7, -5, 3])
+
+In [14]: obj.index # like range(4)
+Out[14]: RangeIndex(start=0, stop=4, step=1)
+In [15]: obj2=pd.Series([4, 7, -5, 3], index=['d','b','a'',c'])
+
+In [16]: obj2
+Out[16]:
+d     4
+b     7
+a    -5
+c     3
+dtype: int64
+
+In [17]: obj2.index
+Out[17]: Index(['d', 'b', 'a', 'c'], dtype='object')
+In [18]: obj2['a']
+Out[18]: -5
+
+In [19]: obj2['d'] = 6
+
+In [20]: obj2[['c', 'a', 'd']]
+Out[20]:
+c     3
+a    -5
+d     6
+dtype: int64
+In [21]: obj2[obj2 > 0]
+Out[21]:
+d     6
+b     7
+c     3
+dtype: int64
+
+In [22]: obj2 * 2
+Out[22]:
+d    12
+b    14
+a   -10
+c     6
+dtype: int64
+
+In [23]: np.exp(obj2)
+Out[23]:
+d     403.428793
+b    1096.633158
+a       0.006738
+c      20.085537
+dtype: float64
+In [24]: 'b' in obj2
+Out[24]: True
+
+In [25]: 'e' in obj2
+Out[25]: False
+In [26]: sdata = {'Ohio': 35000, 'Texas': 71000, 'Oregon': 16000, 'Utah': 5000}
+
+In [27]: obj3 = pd.Series(sdata)
+
+In [28]: obj3
+Out[28]:
+Ohio    35000
+Oregon  16000
+Texas   71000
+Utah     5000
+dtype: int64
+In [29]: states = ['California', 'Ohio', 'Oregon', 'Texas']
+
+In [30]: obj4 = pd.Series(sdata, index=states)
+
+In [31]: obj4
+Out[31]:
+California     NaN
+Ohio       35000.0
+Oregon     16000.0
+Texas      71000.0
+dtype: float64
+In [32]: pd.isnull(obj4)
+Out[32]:
+California True
+Ohio       False
+Oregon     False
+Texas      False
+dtype: bool
+
+In [33]: pd.notnull(obj4)
+Out[33]:
+California False
+Ohio       True
+Oregon     True
+Texas      True
+dtype: bool
+
+In [34]: obj4.isnull()
+Out[34]:
+California True
+Ohio       False
+Oregon     False
+Texas      False
+dtype: bool
+
+In [35]: obj3
+Out[35]:
+Ohio      35000
+Oregon    16000
+Texas     71000
+Utah       5000
+dtype: int64
+
+In [36]: obj4
+Out[36]:
+California   NaN
+Ohio     35000.0
+Oregon   16000.0
+Texas    71000.0
+dtype: float64
+
+In [37]: obj3 + obj4
+Out[37]:
+California   NaN
+Ohio     70000.0
+Oregon   32000.0
+Texas   142000.0
+Utah         NaN
+dtype: float64
+In [38]: obj4.name = 'population'
+
+In [39]: obj4.index.name = 'state'
+
+In [40]: obj4
+Out[40]:
+state
+California    NaN
+Ohio      35000.0
+Oregon    16000.0
+Texas     71000.0
+Name: population, dtype: float64
+In [41]: obj
+Out[41]:
+0    4
+1    7
+2   -5
+3    3
+dtype: int64
+
+In [42]: obj.index = ['Bob', 'Steve', 'Jeff', 'Ryan']
+In [43]: obj
+Out[43]:
+Bob     4
+Steve   7
+Jeff   -5
+Ryan    3
+dtype: int64
+data = {'state': ['Ohio', 'Ohio', 'Ohio', 'Nevada', 'Nevada', 'Nevada'],
+'year': [2000, 2001, 2002, 2001, 2002, 2003],
+'pop': [1.5, 1.7, 3.6, 2.4, 2.9, 3.2]}
+frame = pd.DataFrame(data)
+In [45]: frame
+Out[45]:
+   pop   state   year
+0  1.5    Ohio   2000
+1  1.7    Ohio   2001
+2  3.6    Ohio   2002
+3  2.4  Nevada   2001
+4  2.9  Nevada   2002
+5  3.2  Nevada   2003
+In [46]: frame.head()
+Out[46]:
+   pop   state  year
+0  1.5    Ohio  2000
+1  1.7    Ohio  2001
+2  3.6    Ohio  2002
+3  2.4  Nevada  2001
+4  2.9  Nevada  2002
+In [47]: pd.DataFrame(data, columns=['year', 'state', 'pop'])
+Out[47]:
+   year   state  pop
+0  2000    Ohio  1.5
+1  2001    Ohio  1.7
+2  2002    Ohio  3.6
+3  2001  Nevada  2.4
+4  2002  Nevada  2.9
+5  2003  Nevada  3.2
+In [48]: frame2 = pd.DataFrame(data, columns=['year', 'state', 'pop', 'debt'], index=['one', 'two', 'three', 'four', 'five', 'six'])
+In [49]: frame2
+Out[49]:
+       year   state  pop  debt
+one    2000    Ohio  1.5   NaN
+two    2001    Ohio  1.7   NaN
+three  2002    Ohio  3.6   NaN
+four   2001  Nevada  2.4   NaN
+five   2002  Nevada  2.9   NaN
+six    2003  Nevada  3.2   NaN
+
+In [50]: frame2.columns
+Out[50]: Index(['year', 'state', 'pop', 'debt'], dtype='object')
+In [51]: frame2['state']
+Out[51]:
+one      Ohio
+two      Ohio
+three    Ohio
+four   Nevada
+five   Nevada
+six    Nevada
+
+Name: state, dtype: object
+In [52]: frame2.year
+Out[52]:
+one     2000
+two     2001
+three   2002
+four    2001
+five    2002
+six     2003
+Name: year, dtype: int64
+In [53]: frame2.loc['three']
+Out[53]:
+year   2002
+state  Ohio
+pop     3.6
+debt    NaN
+Name: three, dtype: object
+In [54]: frame2['debt'] = 16.5
+
+In [55]: frame2
+Out[55]:
+      year   state  pop  debt
+one   2000    Ohio  1.5  16.5
+two   2001    Ohio  1.7  16.5
+three 2002    Ohio  3.6  16.5
+four  2001  Nevada  2.4  16.5
+five  2002  Nevada  2.9  16.5
+six   2003  Nevada  3.2  16.5
+
+In [56]: frame2['debt'] = np.arange(6.)
+
+In [57]: frame2
+Out[57]:
+      year   state  pop  debt
+one   2000    Ohio  1.5   0.0
+two   2001    Ohio  1.7   1.0
+three 2002    Ohio  3.6   2.0
+four  2001  Nevada  2.4   3.0
+five  2002  Nevada  2.9   4.0
+six   2003  Nevada  3.2   5.0
+In [58]: val = pd.Series([-1.2, -1.5, -1.7], index=['two', 'four', 'five'])
+
+In [59]: frame2['debt'] = val
+
+In [60]: frame2
+Out[60]:
+       year   state  pop  debt
+one    2000    Ohio  1.5   NaN
+two    2001    Ohio  1.7  -1.2
+three  2002    Ohio  3.6   NaN
+four   2001  Nevada  2.4  -1.5
+five   2002  Nevada  2.9  -1.7
+six    2003  Nevada  3.2   NaN
+In [61]: frame2['eastern'] = frame2.state == 'Ohio'
+
+In [62]: frame2
+Out[62]:
+       year   state  pop  debt  eastern
+one    2000    Ohio  1.5   NaN     True
+two    2001    Ohio  1.7  -1.2     True
+three  2002    Ohio  3.6   NaN     True
+four   2001  Nevada  2.4  -1.5    False
+five   2002  Nevada  2.9  -1.7    False
+six    2003  Nevada  3.2   NaN    False
+In [63]: del frame2['eastern']
+
+In [64]: frame2.columns
+Out[64]: Index(['year', 'state', 'pop', 'debt'], dtype='object')
+In [65]: pop = {'Nevada': {2001: 2.4, 2002: 2.9},'Ohio': {2000: 1.5, 2001: 1.7, 2002: 3.6}}
+In [66]: frame3 = pd.DataFrame(pop)
+
+In [67]: frame3
+Out[67]:
+      Nevada  Ohio
+2000     NaN   1.5
+2001     2.4   1.7
+2002     2.9   3.6
+In [68]: frame3.T
+Out[68]:
+        2000  2001  2002
+Nevada   NaN   2.4   2.9
+Ohio     1.5   1.7   3.6
+In [72]: frame3.index.name='year';frame3.columns.name='state'
+
+In [73]: frame3
+Out[73]:
+state  Nevada  Ohio
+year
+2000      NaN   1.5
+2001      2.4   1.7
+2002      2.9   3.6
+In [74]: frame3.values
+Out[74]:
+array([[ nan, 1.5],
+	   [ 2.4, 1.7],
+	   [ 2.9, 3.6]])
+In [75]: frame2.values
+Out[75]:
+array([[2000, 'Ohio', 1.5, nan],
+       [2001, 'Ohio', 1.7, -1.2],
+       [2002, 'Ohio', 3.6, nan],
+       [2001, 'Nevada', 2.4, -1.5],
+       [2002, 'Nevada', 2.9, -1.7],
+       [2003, 'Nevada', 3.2, nan]], dtype=object)
+In [76]: obj = pd.Series(range(3), index=['a', 'b', 'c'])
+
+In [77]: index = obj.index
+
+In [78]: index
+Out[78]: Index(['a', 'b', 'c'], dtype='object')
+
+In [79]: index[1:]
+Out[79]: Index(['b', 'c'], dtype='object')
+index[1] = 'd' # TypeError
+In [80]: labels = pd.Index(np.arange(3))
+
+In [81]: labels
+Out[81]: Int64Index([0, 1, 2], dtype='int64')
+
+In [82]: obj2 = pd.Series([1.5, -2.5, 0], index=labels)
+
+In [83]: obj2
+Out[83]:
+0  1.5
+1 -2.5
+2  0.0
+dtype: float64
+
+In [84]: obj2.index is labels
+Out[84]: True
+In [85]: frame3
+Out[85]:
+state  Nevada  Ohio
+year
+2000      NaN   1.5
+2001      2.4   1.7
+2002      2.9   3.6
+
+In [86]: frame3.columns
+Out[86]: Index(['Nevada', 'Ohio'], dtype='object', name='state')
+
+In [87]: 'Ohio' in frame3.columns
+Out[87]: True
+
+In [88]: 2003 in frame3.index
+Out[88]: False
+In [89]: dup_labels = pd.Index(['foo', 'foo', 'bar', 'bar'])
+
+In [90]: dup_labels
+Out[90]: Index(['foo', 'foo', 'bar', 'bar'], dtype='object')
+In [184]: fec = pd.read_csv('datasets/fec/P00000001-ALL.csv')
+
+In [185]: fec.info()
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1001731 entries, 0 to 1001730
+Data columns (total 16 columns):
+cmte_id            1001731 non-null object
+cand_id            1001731 non-null object
+cand_nm            1001731 non-null object
+contbr_nm          1001731 non-null object
+contbr_city        1001712 non-null object
+contbr_st          1001727 non-null object
+contbr_zip         1001620 non-null object
+contbr_employer    988002 non-null object
+contbr_occupation  993301 non-null object
+contb_receipt_amt  1001731 non-null float64
+contb_receipt_dt   1001731 non-null object
+receipt_desc       14166 non-null object
+memo_cd            92482 non-null object
+memo_text          97770 non-null object
+form_tp            1001731 non-null object
+file_num           1001731 non-null int64
+dtypes: float64(1), int64(1), object(14)
+memory usage: 122.3+ MB
+In [186]: fec.iloc[123456]
+Out[186]:
+cmte_id                             C00431445
+cand_id                             P80003338
+cand_nm                         Obama, Barack
+contbr_nm                         ELLMAN, IRA
+contbr_city                             TEMPE
+contbr_st                                  AZ
+contbr_zip                          852816719
+contbr_employer      ARIZONA STATE UNIVERSITY
+contbr_occupation                   PROFESSOR
+contb_receipt_amt                          50
+contb_receipt_dt                    01-DEC-11
+receipt_desc                              NaN
+memo_cd                                   NaN
+memo_text                                 NaN
+form_tp                                 SA17A
+file_num                               772372
+Name: 123456, dtype: object
+In [187]: unique_cands = fec.cand_nm.unique()
+
+In [188]: unique_cands
+Out[188]:
+array(['Bachmann, Michelle', 'Romney, Mitt', 'Obama, 
+      Barack',"Roemer, Charles E. 'Buddy' III", 'Pawlenty,
+      Timothy','Johnson, Gary Earl', 'Paul, Ron', 'Santorum,
+      Rick', 'Cain, Herman','Gingrich, Newt', 'McCotter,
+      Thaddeus G', 'Huntsman, Jon','Perry, Rick'],
+      dtype=object)
+
+In [189]: unique_cands[2]
+Out[189]: 'Obama, Barack'
+In [190]: parties = {'Bachmann, Michelle': 'Republican',
+                     'Cain, Herman': 'Republican',
+                     'Gingrich, Newt': 'Republican',
+                     'Huntsman, Jon': 'Republican',
+                     'Johnson, Gary Earl': 'Republican',
+                     'McCotter, Thaddeus G': 'Republican',
+                     'Obama, Barack': 'Democrat',
+                     'Paul, Ron': 'Republican',
+                     'Pawlenty, Timothy': 'Republican',
+                     'Perry, Rick': 'Republican',
+                     "Roemer, Charles E. 'Buddy' III": 'Republican',
+                     'Romney, Mitt': 'Republican',
+                     'Santorum, Rick': 'Republican'}
+In [191]: fec.cand_nm[123456:123461]
+Out[191]:
+123456  Obama, Barack
+123457  Obama, Barack
+123458  Obama, Barack
+123459  Obama, Barack
+123460  Obama, Barack
+Name: cand_nm, dtype: object
+In [192]: fec.cand_nm[123456:123461].map(parties)
+Out[192]:
+123456  Democrat
+123457  Democrat
+123458  Democrat
+123459  Democrat
+123460  Democrat
+Name: cand_nm, dtype: object
+
+# Add it as a column
+In [193]: fec['party'] = fec.cand_nm.map(parties)
+
+In [194]: fec['party'].value_counts()
+Out[194]:
+Democrat    593746
+Republican  407985
+Name: party, dtype: int64
+In [195]: (fec.contb_receipt_amt > 0).value_counts()
+Out[195]:
+True   991475
+False  10256
+Name: contb_receipt_amt, dtype: int64
+In [196]: fec = fec[fec.contb_receipt_amt > 0]
+In [197]: fec_mrbo = fec[fec.cand_nm.isin(['Obama, Barack', 'Romney, Mitt'])]
+In [198]: fec.contbr_occupation.value_counts()[:10]
+Out[198]:
+RETIRED                                 233990
+INFORMATION REQUESTED                    35107
+ATTORNEY                                 34286
+HOMEMAKER                                29931
+PHYSICIAN                                23432
+INFORMATION REQUESTED PER BEST EFFORTS   21138
+ENGINEER                                 14334
+TEACHER                                  13990
+CONSULTANT                               13273
+PROFESSOR                                12555
+Name: contbr_occupation, dtype: int64
+occ_mapping = {
+    'INFORMATION REQUESTED PER BEST EFFORTS' : 'NOT PROVIDED',
+    'INFORMATION REQUESTED' : 'NOT PROVIDED',
+    'INFORMATION REQUESTED (BEST EFFORTS)' : 'NOT PROVIDED',
+    'C.E.O.': 'CEO'
+}
+
+# If no mapping provided, return x
+f = lambda x: occ_mapping.get(x, x)
+fec.contbr_occupation = fec.contbr_occupation.map(f)
+emp_mapping = {
+    'INFORMATION REQUESTED PER BEST EFFORTS' : 'NOT PROVIDED',
+    'INFORMATION REQUESTED' : 'NOT PROVIDED',
+    'SELF' : 'SELF-EMPLOYED',
+    'SELF EMPLOYED' : 'SELF-EMPLOYED',
+}
+
+# If no mapping provided, return x
+f = lambda x: emp_mapping.get(x, x)
+fec.contbr_employer = fec.contbr_employer.map(f)
+In [201]: by_occupation = fec.pivot_table('contb_receipt_amt', index='contbr_occupation', columns='party', aggfunc='sum')
+
+In [202]: over_2mm = by_occupation[by_occupation.sum(1) > 2000000]
+
+In [203]: over_2mm
+Out[203]:
+party                 Democrat    Republican
+contbr_occupation
+ATTORNEY           11141982.97  7.477194e+06
+CEO                 2074974.79  4.211041e+06
+CONSULTANT          2459912.71  2.544725e+06
+ENGINEER             951525.55  1.818374e+06
+EXECUTIVE           1355161.05  4.138850e+06
+    ... ... ...
+PRESIDENT           1878509.95  4.720924e+06
+PROFESSOR           2165071.08  2.967027e+05
+REAL ESTATE          528902.09  1.625902e+06
+RETIRED            25305116.38  2.356124e+07
+SELF-EMPLOYED        672393.40  1.640253e+06
+[17 rows x 2 columns]
+In [205]: over_2mm.plot(kind='barh')
+matplotlib.pyplot.show()
+def get_top_amounts(group, key, n=5):
+    totals = group.groupby(key)['contb_receipt_amt'].sum()
+    return totals.nlargest(n)
+In [207]: grouped = fec_mrbo.groupby('cand_nm')
+
+In [208]: grouped.apply(get_top_amounts, 'contbr_occupation', n=7)
+Out[208]:
+cand_nm        contbr_occupation
+Obama, Barack  RETIRED                25305116.38
+               ATTORNEY               11141982.97
+               INFORMATION REQUESTED   4866973.96
+               HOMEMAKER               4248875.80
+               PHYSICIAN               3735124.94
+                                          ...
+Romney, Mitt   HOMEMAKER               8147446.22
+               ATTORNEY                5364718.82
+               PRESIDENT               2491244.89
+               EXECUTIVE               2300947.03
+               C.E.O.                  1968386.11
+Name: contb_receipt_amt, Length: 14, dtype: float64
+
+In [209]: grouped.apply(get_top_amounts, 'contbr_employer', n=10)
+Out[209]:
+cand_nm        contbr_employer
+Obama, Barack  RETIRED                22694358.85
+               SELF-EMPLOYED          17080985.96
+               NOT EMPLOYED            8586308.70
+               INFORMATION REQUESTED   5053480.37
+               HOMEMAKER 2605408.54
+                                           ...
+Romney, Mitt   CREDIT SUISSE            281150.00
+               MORGAN STANLEY           267266.00
+               GOLDMAN SACH & CO.       238250.00
+               BARCLAYS CAPITAL         162750.00
+               H.I.G. CAPITAL           139500.00
+Name: contb_receipt_amt, Length: 20, dtype: float64
+In [210]: bins = np.array([0, 1, 10, 100, 1000, 10000,100000, 1000000, 10000000])
+
+In [211]: labels = pd.cut(fec_mrbo.contb_receipt_amt, bins)
+
+In [212]: labels
+Out[212]:
+411        (10, 100]
+412      (100, 1000]
+413      (100, 1000]
+414        (10, 100]
+415        (10, 100]
+              ...
+701381     (10, 100]
+701382   (100, 1000]
+701383       (1, 10]
+701384     (10, 100]
+701385   (100, 1000]
+Name: contb_receipt_amt, Length: 694282, dtype: category
+Categories (8, interval[int64]): [(0, 1] < (1, 10] < (10, 100] < (100, 1000] < (1000, 10000] < (10000, 100000] < (100000, 1000000] < (1000000,10000000]]
+In [213]: grouped = fec_mrbo.groupby(['cand_nm', labels])
+
+In [214]: grouped.size().unstack(0)
+Out[214]:
+cand_nm            Obama, Barack  Romney, Mitt
+contb_receipt_amt
+(0, 1]                     493.0          77.0
+(1, 10]                  40070.0        3681.0
+(10, 100]               372280.0       31853.0
+(100, 1000]             153991.0       43357.0
+(1000, 10000]            22284.0       26186.0
+(10000, 100000]              2.0           1.0
+(100000, 1000000]            3.0           nNamespaces
+(1000000, 10000000]          4.0           NaN
+In [216]: bucket_sums = grouped.contb_receipt_amt.sum().unstack(0)
+
+In [217]: normed_sums = bucket_sums.div(bucket_sums.sum(axis=1), axis=0)
+
+In [218]: normed_sums
+Out[218]:
+cand_nm             Obama, Barack  Romney, Mitt
+contb_receipt_amt
+(0, 1]                   0.805182      0.194818
+(1, 10]                  0.918767      0.081233
+(10, 100]                0.910769      0.089231
+(100, 1000]              0.710176      0.289824
+(1000, 10000]            0.447326      0.552674
+(10000, 100000]          0.823120      0.176880
+(100000, 1000000]        1.000000           NaN
+(1000000, 10000000]      1.000000           NaN
+
+In [219]: normed_sums[:-2].plot(kind='barh')
+In [220]: grouped = fec_mrbo.groupby(['cand_nm', 'contbr_st'])
+
+In [221]: totals = grouped.contb_receipt_amt.sum().unstack(0).fillna(0)
+
+In [222]: totals = totals[totals.sum(1) > 100000]
+
+In [223]: totals[:10]
+Out[223]:
+cand_nm    Obama, Barack  Romney, Mitt
+contbr_st
+AK             281840.15      86204.24
+AL             543123.48     527303.51
+AR             359247.28     105556.00
+AZ            1506476.98    1888436.23
+CA           23824984.24   11237636.60
+CO            2132429.49    1506714.12
+CT            2068291.26    3499475.45
+DC            4373538.80    1025137.50
+DE             336669.14      82712.00
+FL            7318178.58    8338458.81
+In [224]: percent = totals.div(totals.sum(1), axis=0)
+
+In [225]: percent[:10]
+Out[225]:
+cand_nm    Obama, Barack  Romney, Mitt
+contbr_st
+AK              0.765778      0.234222
+AL              0.507390      0.492610
+AR              0.772902      0.227098
+AZ              0.443745      0.556255
+CA              0.679498      0.320502
+CO              0.585970      0.414030
+CT              0.371476      0.628524
+DC              0.810113      0.189887
+DE              0.802776      0.197224
+FL              0.467417      0.532583

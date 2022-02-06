@@ -1,0 +1,632 @@
+% by Mohammad Rostami
+\ProvidesPackage{PersianTemplate}      %declear package name
+
+% == Metadata =============================================
+%میان فاصله
+\newcommand{\ن}{‌}
+
+\makeatletter
+\let\ptitle\@title
+\let\pauthor\@author
+\let\pdate\@date
+\makeatother
+
+% == Packages =============================================
+\usepackage{makeidx}
+\usepackage{amsmath}
+\usepackage{enumerate} % for enumerate
+\usepackage{setspace}
+\usepackage{amssymb}
+\usepackage[showframe=false, margin=0.75in]{geometry}
+\usepackage{xparse}         % Making newcommands with multiple optional arguments
+\usepackage{lipsum}         % dummy text
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{textcomp}               % Needed for straight quotes
+\usepackage[T1]{fontenc}	                          % good looking fonts
+\usepackage{fontspec}
+\usepackage[usenames,dvipsnames]{xcolor} % Color setup
+\usepackage{fancyhdr}                    % Running Headers and footers
+\usepackage{graphicx}                    % Images loaded externally
+\usepackage{float}    %To force a figure appear where you want (\begin{figure}[H])
+\usepackage{wrapfig} % put picture next to text
+\usepackage[inline, shortlabels]{enumitem}	            % enumerate enviroment
+\usepackage{colortbl}              % for coloring tables
+\usepackage{hyperref}            % Making links in PDF
+\usepackage[parfill]{parskip}      % Begin paragraphs with an empty line rather than an indent
+\usepackage{tikz}                 % For Making diagrams and graphs
+\usepackage{listings}             % For Code Texts
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{chngcntr}            % equations with costume numbering
+\usepackage{ wasysym }     %\fullmoon big circle in calculations
+\usepackage{mathtools}
+\usepackage{siunitx}
+
+
+\usepackage{xepersian}          %Persian in Tex
+
+
+
+% == Package Settings ========================================
+
+%-- Xepersian ------------------------------------------------------------------------------
+\settextfont[Ligatures=TeX,Scale=1, Path = fonts/, UprightFont={*-Regular.ttf},
+             BoldFont={*-Bold.ttf},]{Bahij Nazanin}
+\ExplSyntaxOn \cs_set_eq:NN \etex_iffontchar:D \tex_iffontchar:D \cs_undefine:N \c_one \int_const:Nn \c_one { 1 } \ExplSyntaxOff
+\setdigitfont[Ligatures=TeX,Scale=1, Path = fonts/]{Bahij Nazanin-Regular.ttf}
+\setlatintextfont[Ligatures=TeX,Scale=1, Path = fonts/, UprightFont={*-Regular.ttf},
+             BoldFont={*-Bold.ttf},]{Bahij Nazanin}
+
+% \setlatintextfont[
+% 		UprightFont={* 8 Regular},
+%             BoldFont={* 8 Bold},
+%             ItalicFont={* 8 Italic},
+%             BoldItalicFont={* 10 Bold Italic},
+%             SmallCapsFont={* Caps 10 Regular},
+%             SlantedFont={* Slanted 8 Regular}
+%            ]{Latin Modern Roman}
+% \setmainfont[Ligatures=TeX,Scale=1]{Franklin Gothic Medium}
+% \setsansfont[Ligatures=TeX,Scale=1]{Franklin Gothic Medium}
+% \setmonofont[Ligatures=TeX,Scale=1]{Georgia}
+% \newfontfamily⟨cmd⟩[Ligatures=TeX,Scale=1]{Latin Modern Roman}
+
+%----------------------------------------------------------------------------------------------
+
+%-- Hyperref --------------------------------------------------------------------------------
+\hypersetup{
+    bookmarks=true,          % show bookmarks bar?
+    unicode=true,            % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,         % show Acrobat’s toolbar?
+    pdfmenubar=true,         % show Acrobat’s menu?
+    pdffitwindow=false,      % window fit to page when opened
+    pdfstartview={FitH},     % fits the width of the page to the window
+    pdftitle={\ptitle},      % title
+    pdfauthor={\pauthor},    % author
+    pdfcreator={XelaTeX},    % creator of the document
+    pdfproducer={\pauthor},  % producer of the document
+    pdfnewwindow=false,      % links in new window
+    colorlinks=true,         % false: boxed links; true: colored links
+    linkcolor=BrickRed,      % color of internal links
+    citecolor=OliveGreen,    % color of links to bibliography
+    filecolor=magenta,       % color of file links
+    urlcolor=BlueViolet      % color of external links
+}
+%-------------------------------------------------------------------------------------------------
+
+%-- enumitem(two items in one line command) -------------------------------------------
+
+%%\begin{enumerate}
+%%    \item Goes on first line.
+%%    \inlineitem Also goes on first line.
+%%    \item Goes on second line.
+%%  \end{enumerate}
+
+\makeatletter
+\newcommand{\inlineitem}[1][]{%
+\ifnum\enit@type=\tw@
+			{\descriptionlabel{#1}}
+		\hspace{\labelsep}%
+\else
+	\ifnum\enit@type=\z@
+			\refstepcounter{\@listctr}\fi
+		\quad\@itemlabel\hspace{\labelsep}%
+\fi}
+\makeatother
+\parindent=0pt
+%------------------------------------------------------------------------------------------------
+
+%-- amsmath ---------------------------------------------------------------------------------
+\numberwithin{equation}{section}           % the equation enviroments are numbered
+%------------------------------------------------------------------------------------------------
+
+%-- tikz ----------------------------------------------------------------------------------------
+\usetikzlibrary{arrows}           %easier to use library for making diagrams and graphs
+%------------------------------------------------------------------------------------------------
+
+%-- setspace ----------------------------------------------------------------------------------
+\baselineskip=0.75cm           % influences the spaceing between two lines
+\singlespacing                  % space between words
+
+%------------------------------------------------------------------------------------------------
+
+%-- fancyhdr ---------------------------------------------------------------------------------
+\pagestyle{fancy}
+ \fancyhf{} 
+
+ \fancyhead[R]{\ptitle}
+
+ \fancyfoot[LE,RO]{| \space\space\space\thepage\space\space\space\space |} 
+ \fancyfoot[RE,LO]{\rightmark} 
+
+ \renewcommand{\headrulewidth}{0.5pt}
+ \renewcommand{\footrulewidth}{0.5pt}
+%-------------------------------------------------------------------------------------------------
+
+%-- listings--------------------------------------------------------------------------------------
+
+\lstdefinestyle{bash}{
+  language=Bash,                   % the language
+  backgroundcolor=\color{black!90},
+  showspaces=false,
+  showtabs=false,
+  breaklines=true,
+  showstringspaces=false,
+  breakatwhitespace=true,
+%  basicstyle=\footnotesize\ttfamily,   % size of the fonts for the code
+  % Color settings to match IDLE style
+   basicstyle = {\footnotesize\ttfamily \color{white!90}}, % size of the fonts for the code
+  identifierstyle=\color{white!90},
+  keywordstyle=\color{white!90},
+  keywordstyle=[2]{\color{white!90}},
+  keywordstyle=[3]{\color{white!90}},
+  keywordstyle=[4]{\color{white!90}},
+  keywordstyle=[5]{\color{white!90}},
+  keywordstyle=[6]{\color{white!90}},
+  keywordstyle=[7]{\color{white!90}},
+  otherkeywords = {*,\%, :,+,>,=,<,\*},
+  morekeywords = [4]{\%, :,+,<,=,<,\*},
+  stringstyle=\color{white!90},
+  commentstyle=\color{white!90},
+  upquote=true,                      % requires textcomp
+  escapeinside={\%*}{*)}
+}
+
+
+\definecolor{purple2}{RGB}{153,0,153} % there's actually no standard purple
+\definecolor{green2}{RGB}{0,153,0} % a darker green
+\newlength{\mysize}
+\newcommand{\myfontsize}[1]{\setlength{\mysize}{#1pt}%
+  \fontsize{\mysize}{1.2\mysize}\selectfont}       %commad for fontsize in pt
+
+\lstdefinestyle{python-idle-code}{
+  language=Python,                   % the language
+  backgroundcolor={\color{white}},
+  showspaces=false,
+  showtabs=false,
+  breaklines=true,
+  showstringspaces=false,
+  breakatwhitespace=true,
+  basicstyle=\myfontsize{9}\ttfamily,   % size of the fonts for the code
+  % Color settings to match IDLE style
+  identifierstyle=\color{blue!90},
+  keywordstyle=\color{orange},       % core keywords
+  keywordstyle={[2]\color{purple2}}, % built-ins
+  stringstyle=\color{green2},
+  commentstyle=\color{red},
+  upquote=true,                      % requires textcomp
+  escapeinside={\%*}{*)}
+}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame={},
+  xleftmargin=\parindent,
+  language=C,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\lstdefinestyle{customasm}{
+  belowcaptionskip=1\baselineskip,
+  frame=L,
+  xleftmargin=\parindent,
+  language=[x86masm]Assembler,
+  basicstyle=\footnotesize\ttfamily,
+  commentstyle=\itshape\color{purple!40!black},
+}
+
+\lstset{escapechar=@,style=customc}
+
+
+%-------------------------------------------------------------------------------------------------
+%--- First Page ---------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------
+\newcommand{\heading}
+{%set paging
+\renewcommand{\thepage}{\arabic{page}}
+\center
+\begin{tabular}{rp{3cm}cp{3cm}l}
+&&\Large\textbf{به نام خدا}&&\\
+\includegraphics[scale=0.15]{pictures/sharif-logo.png}&&
+\normalsize\textbf{دانشکده‌ی ریاضی و علوم کامپیوتر}
+&&\includegraphics[scale=0.15]{pictures/sharif-logo.png}
+\end{tabular}}
+
+\makeatletter
+\newcommand*{\teacher}[1]{\gdef\@teacher{#1}}
+\newcommand*{\@teacher}{\texttt{\string\teacher}}
+
+\newcommand*{\firstpage}{
+\begin{titlepage}
+\vspace*{0.15\paperheight}
+{%set paging
+\renewcommand{\thepage}{\arabic{page}}
+\center
+\begin{tabular}{rp{1cm}cp{1cm}lp{1cm}}
+&&\LARGE\textbf{به نام خدا}&&\\
+\includegraphics[scale=0.25]{pictures/sharif-logo.png}&&
+\large\textbf{دانشکده‌ی ریاضی و علوم کامپیوتر}
+&&&\includegraphics[scale=0.25]{pictures/sharif-logo.png}
+\end{tabular}}
+\noindent
+\begin{center}
+	\colorbox{gray!20}{\framebox[\textwidth]
+	{\begin{minipage}{0.95\textwidth} \onehalfspacing
+       	
+       	
+       	{\Large\bf  مدرس: \@teacher} \hfill 
+       	\vspace*{2.5cm}
+       	
+		{\centering \Huge \@title
+		
+		}\medskip
+		\vspace*{2.5cm}
+       	{\Large\it نگارنده: \@author \hfill\Large تاریخ: \@date}
+       	
+     \end{minipage}}}
+\end{center}
+%\vspace*{\fill}
+\end{titlepage}}
+
+\newcommand*{\homework}{\heading \noindent
+\begin{center}
+	\colorbox{gray!20}{\framebox[\textwidth]
+	{\begin{minipage}{0.95\textwidth} \onehalfspacing
+       	{\bf  مدرس: \@teacher} \hfill 
+       	
+		{\centering \Large \@title
+		
+		}\medskip
+		
+       	{\it نگارنده: \@author \hfill تاریخ: \@date}
+     \end{minipage}}}
+\end{center}}
+\makeatother
+
+\newcommand{\sutmaketitle}[1]   % Draw a sut.png above the title
+{
+   \vspace*{-20mm}
+	\begin{center}
+	\large{
+		به\ن نام\ن خدا
+		}
+	\end{center}
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[height=5cm,width=5cm]{pictures/sharif-logo.png}
+		\label{SUT}
+	\end{figure}
+	\vspace*{-20mm}
+	{\let\newpage\relax\maketitle}
+}
+%-------------------------------------------------------------------------------------------------
+%== define commands and enviroments ==============================
+
+\NewDocumentCommand{\bashcode}{ O{-6mm} O{-3mm} O{1in} O{12cm} m }{\lstset{
+ %basicstyle=\small\ttfamily, % size of the fonts for the code               
+ language={Bash},style={bash},
+ showstringspaces=false,
+ tabsize=4,
+ upquote=true,   % Requires textcomp
+ escapechar=@                                             
+}
+\vspace{#1}\begin{latin}\hspace{#3}\begin{minipage}{#4}\lstinputlisting[language=Bash, firstline=#5, lastline=#5]{bash/dir.txt}\end{minipage}\end{latin}\vspace{#2}
+}
+
+\newcommand{\pythonfile}[1]
+{\lstset{
+% basicstyle=\small\ttfamily, % size of the fonts for the code               
+ language={Python},style={python-idle-code},
+ showstringspaces=false,
+ tabsize=4,
+ upquote=true,   % Requires textcomp
+ escapechar=@                                             
+}
+\vspace{-1mm}\begin{latin}\lstinputlisting[language=Python]{#1}\end{latin}\vspace{-3mm}
+}
+
+\NewDocumentCommand{\pythonline}{ O{-6mm} O{-3mm} O{1in} O{12cm} m m}{\lstset{
+% basicstyle=\small\ttfamily, % size of the fonts for the code               
+ language={Python},style={python-idle-code},
+ showstringspaces=false,
+ tabsize=4,
+ upquote=true,   % Requires textcomp
+ escapechar=@                                             
+}
+\vspace{#1}\begin{latin}\hspace{#3}\begin{minipage}{#4}\lstinputlisting[language=Python, firstline=#5, lastline=#6]{python/pythonline.txt}\end{minipage}\end{latin}\vspace{#2}
+}
+
+\newcommand{\pysize}[7]{\lstset{
+ language={Python},style={python-idle-code},
+ basicstyle=\myfontsize{#7}\ttfamily, % size of the fonts for the code
+ showstringspaces=false,
+ tabsize=4,
+ upquote=true,   % Requires textcomp
+ escapechar=@                                             
+}
+\vspace{#1}\begin{latin}\hspace{#3}\begin{minipage}{#4}\lstinputlisting[language=Python, firstline=#5, lastline=#6]{python/pythonline.txt}\end{minipage}\end{latin}\vspace{#2}
+}
+
+% ها
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\ه}{\ن ها}
+\newcommand{\mA}{{\mathcal A}}
+\newcommand{\mB}{{\mathcal B}}
+\newcommand{\mC}{{\mathcal C}}
+\newcommand{\mD}{{\mathcal D}}
+\newcommand{\mE}{{\mathcal E}}
+\newcommand{\mF}{{\mathcal F}}
+\newcommand{\mG}{{\mathcal G}}
+\newcommand{\mH}{{\mathcal H}}
+\newcommand{\mI}{{\mathcal I}}
+\newcommand{\mJ}{{\mathcal J}}
+\newcommand{\mK}{{\mathcal K}}
+\newcommand{\mL}{{\mathcal L}}
+\newcommand{\mM}{{\mathcal M}}
+\newcommand{\mN}{{\mathcal N}}
+\newcommand{\mO}{{\mathcal O}}
+\newcommand{\mP}{{\mathcal P}}
+\newcommand{\mQ}{{\mathcal Q}}
+\newcommand{\mR}{{\mathcal R}}
+\newcommand{\mS}{{\mathcal S}}
+\newcommand{\mT}{{\mathcal T}}
+\newcommand{\mU}{{\mathcal U}}
+\newcommand{\mV}{{\mathcal V}}
+\newcommand{\mW}{{\mathcal W}}
+\newcommand{\mX}{{\mathcal X}}
+\newcommand{\mY}{{\mathcal Y}}
+\newcommand{\mZ}{{\mathcal Z}}
+
+\newcommand{\hs}{\heartsuit}
+\newcommand{\cs}{\clubsuit}
+\renewcommand{\sp}{\spadesuit}
+\newcommand{\ds}{\diamondsuit}
+\newcommand{\noi}{\noindent}
+\newcommand{\exi}{\exists}
+\newcommand{\fa}{\forall}
+\newcommand{\Ra}{\Rightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\La}{\Leftarrow}
+\newcommand{\la}{\leftarrow}
+
+\newcommand{\qed}{\mbox{}\hspace*{\fill}\nolinebreak\mbox{$\rule{0.6em}{0.6em}$}} %%to end your proof write $\qed$.
+
+
+
+
+
+%-- cryptosystem --------------------------------------------------------------------------
+\newcommand{\Enc}{\mathsf{Enc}}
+\newcommand{\Dec}{\mathsf{Dec}}
+\newcommand{\Gen}{\mathsf{Gen}}
+%groups
+\newcommand{\GroupGen}{\mathsf{GroupGen}}
+%message space
+\newcommand{\pspace}{\mathcal{M}}
+\newcommand{\kspace}{\mathcal{K}}
+\newcommand{\cspace}{\mathcal{C}}
+%adversary
+\newcommand{\Adv}{\mathcal{A}}
+\newcommand{\AdvD}{\mathcal{D}}
+% experiments
+\newcommand{\ExpPubK}[2]{\mathsf{PubK}_{#1,#2}^{\eav}}
+\newcommand{\ExpPrivK}[2]{\mathsf{PrivK}_{#1,#2}^{\eav}}
+%text up
+\newcommand{\eav}{\textup{eav}}
+% tab
+\newcommand{\tab}{\hspace*{2em}}
+
+\newcommand{\negl}{\mathsf{NEG}}
+\newcommand{\poly}{\mathsf{Poly}}
+\newcommand{\nuppt}{\mathsf{nuPPT}}
+\newcommand{\ppt}{\mathsf{PPT}}
+\newcommand{\bpp}{\mathsf{BPP}}
+\newcommand{\szk}{\mathsf{SZK}}
+\newcommand{\pzk}{\mathsf{PZK}}
+\newcommand{\czk}{\mathsf{CZK}}
+
+\newcommand{\Zstar}{\mathbb{Z}^{*}}
+\newcommand{\gG}{\mathbb{G}}
+
+\newcommand{\view}{\mathsf{view}}
+\newcommand{\outp}{\mathsf{output}}
+\newcommand{\Sim}{\mathcal{S}}
+%-------------------------------------------------------------------------------------------
+
+%-- theorems ----------------------------------------------------------------------------
+
+%\newenvironment{proof}{\par\textbf{برهان.}}{\mbox{}\hspace*{5mm}\nolinebreak\mbox{$\rule{0.6em}{0.6em}$}}
+\newenvironment{claim}{\par\textbf{ادعا.}}{}
+\newtheorem{lemma}{لم}
+\newtheorem{theorem}{قضیه}[section]
+\newtheorem{definition}{تعریف}
+\newtheorem{proposition}{گزاره}
+\newtheorem{recall}{یادآوری}
+\newtheorem{remark}{نکته}
+\newtheorem{example}[definition]{مثال}
+\newtheorem{corollary}[definition]{نتیجه}
+\renewcommand{\bibname}{مراجع}
+
+%--------------------------------------------------------------------------------------------
+%------------------------------------- M.sc. Thesis ---------------------------------------
+%--------------------------------------------------------------------------------------------
+\makeatletter
+
+\newcommand*{\university}[1]{\gdef\@university{#1}}
+\newcommand*{\@university}{\texttt{\string\university}}
+
+\newcommand*{\department}[1]{\gdef\@department{#1}}
+\newcommand*{\@department}{\texttt{\string\department}}
+
+\newcommand*{\logo}[1]{\gdef\@logo{#1}}
+\newcommand*{\@logo}{\texttt{\string\logo}}
+
+\newcommand*{\thesis}[1]{\gdef\@thesis{#1}}
+\newcommand*{\@thesis}{\texttt{\string\thesis}}
+
+\newcommand*{\supervisor}[1]{\gdef\@supervisor{#1}}
+\newcommand*{\@supervisor}{\texttt{\string\supervisor}}
+
+\newcommand*{\secsupervisor}[1]{\gdef\@secsupervisor{#1}}
+\newcommand*{\@secsupervisor}{\texttt{\string\secsupervisor}}
+
+\newcommand*{\advisor}[1]{\gdef\@advisor{#1}}
+\newcommand*{\@advisor}{\texttt{\string\advisor}}
+
+\newcommand*{\subject}[1]{\gdef\@subject{#1}}
+\newcommand*{\@subject}{\texttt{\string\subject}}
+
+\newcommand*{\makethesistitle}{
+\begin{titlepage}
+\vspace*{0.05\paperheight}
+{%set paging
+\renewcommand{\thepage}{\arabic{page}}
+\center
+\begin{center}
+\includegraphics[scale=0.25]{\@logo}\\
+\normalsize{\@university}\\
+\normalsize{\@department}\\
+\vspace*{0.01\paperheight}
+\Large\textbf{\@thesis}\\
+\Large\textbf{\@subject}\\
+\vspace*{0.05\paperheight}
+\Huge\textbf{\@title}\\
+\vspace*{0.05\paperheight}
+\normalsize{نگارش}\\
+\large{\@author}\\
+\vspace*{0.02\paperheight}
+\normalsize{استاد راهنما}\\
+\large{\@supervisor}\\
+\vspace*{0.02\paperheight}
+\normalsize{استاد راهنمای دوم}\\
+\large{\@secsupervisor}\\
+\vspace*{0.02\paperheight}
+\normalsize{استاد مشاور}\\
+\large{\@advisor}\\
+\vspace*{0.02\paperheight}
+\large{\@date}\\
+\end{center}
+	\def\@title{\st@title}
+	\def\@subject{\@fordegree\\\st@subject}
+	\def\@author{{\normalsize\@by}\\{\st@author} \\[1.5\bigskipamount]%
+		{\normalsize\@undersup}\\{\itshape\st@supervisor}\ifdefined\st@secsupervisor\ \iflatin{and }{و }{\itshape\st@secsupervisor}\fi%
+		\ifdefined\st@advisor\\[1.5\bigskipamount]{\normalsize\@undercons}\\{\itshape\st@advisor}\ifdefined\st@secadvisor\ \iflatin{and }{و }{\itshape\st@secadvisor}\fi\fi
+		\\[1.5\bigskipamount]}
+	\def\@date{\ifdefined\st@date\st@date\else\iflatin{\latintoday}{\today}\fi}
+}
+\end{titlepage}}
+\newcommand*{\signframe}{امضاء:..........................}
+
+\newcommand*{\signture}[4]{
+\begin{titlepage}
+\vspace*{0.15\paperheight}
+{%set paging
+\renewcommand{\thepage}{\arabic{page}}
+\begin{center}
+\Large{به نام او}\\
+\large\textbf{\@university}\\
+\large\textbf{\@department}\\
+\end{center}
+\vspace*{0.03\paperheight}
+\@thesis\\
+عنوان: \@title
+نگارش: \@author
+\vspace*{0.03\paperheight}
+\center
+\begin{tabular}{rp{1cm}cp{1cm}l}
+\Large\textbf{کمیته داوران}&& &&\\
+&& &&\\
+&& &&\\
+استاد راهنما:&& \large{\@supervisor} && \signframe \\
+&& &&\\
+&& &&\\
+استاد راهنمای همکار:&& \large{\@secsupervisor} && \signframe \\
+&& &&\\
+&& &&\\
+استاد مشاور:&& \large{\@advisor} && \signframe \\
+&& &&\\
+&& &&\\
+ممتحن داخلی:&& \large{#1} && \signframe \\
+&& &&\\
+&& &&\\
+ممتحن داخلی:&& \large{#2} && \signframe \\
+&& &&\\
+&& &&\\
+داور خارجی:&& \large{#3} && \signframe \\
+&& &&\\
+&& &&\\
+داور خارجی:&& \large{#4} && \signframe \\
+&& &&\\
+&& && تاریخ: .............................\\
+\end{tabular}}
+\end{titlepage}}
+
+
+\newcommand*{\thank}[1]{
+\begin{titlepage}
+\vspace*{0.05\paperheight}
+{%set paging
+\renewcommand{\thepage}{\arabic{page}}
+\center
+\begin{center}
+\large\textbf{قدردانی}
+\end{center}
+{#1}
+\\ و تشکر از آقای وفا خلیقی که با طراحی بسته \XePersian\ کمک بزرگی به حروف‌چینی فارسی کردند،\\
+\vspace*{0.03\paperheight}
+\begin{center}
+\Large{
+و تشکر از خداوند.
+}
+\end{center}
+}
+\end{titlepage}}
+
+\newcommand*{\makethesisenglishtitle}{
+\begin{titlepage}
+\vspace*{0.05\paperheight}
+{%set paging
+\renewcommand{\thepage}{\arabic{page}}
+\center
+\begin{latin}
+\begin{center}
+\includegraphics[scale=0.25]{\@logo}\\
+\normalsize{\@university}\\
+\normalsize{\@department}\\
+\vspace*{0.01\paperheight}
+\Large\textbf{\@thesis}\\
+\Large\textbf{\@subject}\\
+\vspace*{0.05\paperheight}
+\Huge\textbf{\@title}\\
+\vspace*{0.05\paperheight}
+\normalsize{By}\\
+\large{\@author}\\
+\vspace*{0.02\paperheight}
+\normalsize{Supervisor}\\
+\large{\@supervisor}\\
+\vspace*{0.02\paperheight}
+\normalsize{Second Supervisor}\\
+\large{\@secsupervisor}\\
+\vspace*{0.02\paperheight}
+\normalsize{Advisor}\\
+\large{\@advisor}\\
+\vspace*{0.02\paperheight}
+\large{\@date}\\
+\end{center}
+	\def\@title{\st@title}
+	\def\@subject{\@fordegree\\\st@subject}
+	\def\@author{{\normalsize\@by}\\{\st@author} \\[1.5\bigskipamount]%
+		{\normalsize\@undersup}\\{\itshape\st@supervisor}\ifdefined\st@secsupervisor\ \iflatin{and }{و }{\itshape\st@secsupervisor}\fi%
+		\ifdefined\st@advisor\\[1.5\bigskipamount]{\normalsize\@undercons}\\{\itshape\st@advisor}\ifdefined\st@secadvisor\ \iflatin{and }{و }{\itshape\st@secadvisor}\fi\fi
+		\\[1.5\bigskipamount]}
+	\def\@date{\ifdefined\st@date\st@date\else\iflatin{\latintoday}{\today}\fi}
+\end{latin}}
+\end{titlepage}}
+
+
+\makeatother

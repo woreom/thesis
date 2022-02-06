@@ -1,0 +1,16 @@
+C:\Users\Username>pip install [Package Name]
+C:\Users\Username>pip3 install [Package Name]
+C:\Users\Username>cd %dir
+C:\Users\Username>python setup.py install
+C:\Users\Username>conda install [Package Name]
+my-iMac:~ my $ conda install [Package Name]
+my-iMac:~ my $ pip install [Package Name]
+MyLinux \@@LinuxName:~S conda install [Package Name]
+MyLinux \@@LinuxName:~S pip install [Package Name]
+C:\Users\Username>pip install pandas
+C:\Users\Username>pip3 install pandas
+C:\Users\Username>cd %dir
+C:\Users\Username>python setup.py install
+python3 -m pip install jupyter
+pip3 install jupyter
+C:\Users\Username>jupyter notebook
