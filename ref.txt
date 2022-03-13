@@ -1,0 +1,52 @@
+﻿1	All you need about CRISPR:, <https://www.addgene.org/guides/crispr/> (
+2	CHOPCHOP v3: expanding the CRISPR web toolbox beyond genome editing.
+3	CHOPCHOP: a CRISPR/Cas9 and TALEN web tool for genome editing.
+4	CRISPR, <https://en.wikipedia.org/wiki/CRISPR> (
+5	DNA:, <https://en.wikipedia.org/wiki/DNA> (
+6	First genetically modified animal, <https://www.pnas.org/content/71/4/1250?tab=author-info> (
+7	First GM patent, <https://patents.google.com/patent/US4259444> (
+8	Genetic Engineering Will Change Everything Forever – CRISPR, <https://www.youtube.com/watch?v=jAhjPd4uNFY\&t=122s}{\url{https://www.youtube.com/watch?v=jAhjPd4uNFY\&t=122s> (
+9	glowing fish, <https://www.glofish.com> (
+10	GMOs, <https://th.schattauer.de/contents/archive/issue/721/manuscript/9641.html> (
+11	Good Overview by Wired:, <https://www.wired.com/2015/07/crispr-dna-editing-2/> (
+12	HIV Genes Have Been Cut Out of Live Animals Using CRISPR, <https://time.com/4340722/hiv-removed-using-crispr/> (
+13	inserting DNA snippets into organisms, <http://www.genomenewsnetwork.org/resources/timeline/1977_Gilbert.php> (
+14	    (http://parsilatex.com).
+15	Radiation research.
+16	Selective Breeding, <https://en.wikipedia.org/wiki/Plant_breeding> (
+17	Understanding DNA, <https://medlineplus.gov/genetics/understanding/basics/dna/> (
+18	    (2016).
+19	   (ed Figure 1: wikicommons) (2019).
+20	   (ed Figure 01: ZFN) (2021).
+21	Alex Graves, G. W., Malcolm Reynolds, Tim Harley, Ivo Danihelka, Agnieszka Grabska-Barwińska, Sergio Gómez Colmenarejo, Edward Grefenstette, Tiago Ramalho, John Agapiou, Adrià Puigdomènech Badia, Karl Moritz Hermann, Yori Zwols, Georg Ostrovski, Adam Cain, Helen King, Christopher Summerfield, Phil Blunsom, Koray Kavukcuoglu & Demis Hassabis Hybrid computing using a neural network with dynamic external memory. Nature 538 (7626), 471–476, doi:10.1038/nature20101 (2016).
+22	Allison, H.    (ed dna-versus-rna-608191_sketch_Final-54acdd8f8af04c73817e8811c32905fa.png) (2020).
+23	Doudna, J.     (2015).
+24	Florian Heigwer, G. K. M. B. E-CRISP: fast CRISPR target site identification 
+25	G. Bruening, J. M. L. The case of the FLAVR SAVR tomato, <https://calag.ucanr.edu/Archive/?article=ca.v054n04p6> (2000).
+26	Guohui Chuai, Q. L. e. a. DeepCRISPR: optimized CRISPR guide RNA design by deep learning.  (2018).
+27	H., B. Hypothesis Space. Encyclopedia of Machine Learning, 511–513, doi:10.1007/978-0-387-30164-8 373 (2011).
+28	Ishino Y, S. H., Makino K, Amemura M, Nakata A. Nucleotide sequence of the iap gene, responsible for alkaline phosphatase isozyme conversion in Escherichia coli, and identification of the gene product. Journal of Bacteriology 169, 5429–5433 (1987).
+29	Jaegle, A. G., Felix; Brock, Andrew; Zisserman, Andrew; Vinyals, Oriol; Carreira, Joao. Perceiver: General Perception with Iterative Attention.  (2021).
+30	Jean-Paul Concordet, M. H. CRISPOR: intuitive guide selection for CRISPR/Cas9 genome editing experiments and screens. Nucleic Acids Research 46, W242–W245, doi:10.1093/nar/gky354.
+31	Jeongbin Park, S. B., Jin-Soo Kim. Cas-Designer: a web-based tool for choice of CRISPR-Cas9 target sites. bioinformatics, doi:10.1093/bioinformatics/btv537.
+32	Johnson, I. S. Human insulin from recombinant DNA technology. science, doi:10.1126/science.6337396 (1983).
+33	Knoepfler, P. GMO Sapiens: The Life-Changing Science of Designer Babies.  (2015).
+34	Kornel Labun, T. G. M., James A. Gagnon, Summer B. Thyme, Eivind Valen. CHOPCHOP v2: a web tool for the next generation of CRISPR genome engineering 
+35	Labuhn, M., Adams, F. F., Ng, M., Knoess, S., Schambach, A., Charpentier, E. M., Heckl, D. Refined sgRNA efficacy prediction improves large- and small-scale CRISPR–Cas9 applications. Nucleic Acids Research, doi:10.1093/nar/gkx1268 (2017).
+36	Lecun, Y.     (2020).
+37	Ledford, H. CRISPR: gene editing is just the beginning. nature 531, 156–159 (2016).
+38	Ledford, H. HIV cut from cells and rats with CRISPR. nature 531, pages156–159 (2016).
+39	Mojica, F. J., Juez, G. & Rodriguez-Valera, F. Transcription at different salinities of Haloferax mediterranei sequences adjacent to partially modified PstI sites. Molecular Microbiology 9, 613–621 (1993).
+40	Opitz, D. M., R. Popular ensemble methods: An empirical study. Journal of Artificial Intelligence Research 11, 169–198, doi:10.1613/jair.614 (1999).
+41	Patrick D. Hsu, E. S. L., and Feng Zhang. Development and Applications of CRISPR-Cas9 for Genome Engineering, 2014).
+42	Polikar, R. Ensemble based systems in decision making. IEEE Circuits and Systems Magazine 6 (3), 21–45, doi:10.1109/MCAS.2006.1688199 (2006).
+43	Rafal Kaminski, Y. C., Tracy Fischer, Ellen Tedaldi, Alessandro Napoli, Yonggang Zhang, Jonathan Karn, Wenhui Hu & Kamel Khalili. Elimination of HIV-1 Genomes from Human T-lymphoid Cells by CRISPR/Cas9 Gene Editing. Scientific Reports 6 (2016).
+44	Ramachandran, P. P., Niki; Vaswani, Ashish; Bello, Irwan; Levskaya, Anselm; Shlens, Jonathon. Stand-Alone Self-Attention in Vision Models.  (2019).
+45	Ray, T. Google's Supermodel: DeepMind Perceiver is a step on the road to an AI machine that could process anything and everything. ZDNet (2021).
+46	Reardon, S. First CRISPR clinical trial gets green light from US panel. Nature (2016).
+47	Rokach, L. Ensemble-based classifiers. Artificial Intelligence Review 33, 1–39, doi:10.1007/s10462-009-9124-7 (2010).
+48	Sangsu Bae 1, J. P., Jin-Soo Kim. Cas-OFFinder: a fast and versatile algorithm that searches for potential off-target sites of Cas9 RNA-guided endonucleases. bioinformatics, doi:10.1093/bioinformatics/btu048.
+49	Stemmer, M., Thumberger, T., del Sol Keyer, M., Wittbrodt, J. and Mateo, J.L. CCTop: an intuitive, flexible and reliable CRISPR/Cas9 target prediction tool. PLOS ONE, doi:10.1371/journal.pone.0124633 (2015).
+50	Vaswani, A. S., Noam; Parmar, Niki; Uszkoreit, Jakob; Jones, Llion; Gomez, Aidan N.; Kaiser, Lukasz; Polosukhin, Illia Attention Is All You Need.  (2017).
+51	Walsh, G. Therapeutic insulins and their large-scale manufacture. doi:10.1007/s00253-004-1809-x (2005 ).
+52	Wong, J. L. a. K.-C. Off-target predictions in CRISPR-Cas9 gene editing using deep learning. Bioinformatics, doi:10.1093/bioinformatics/bty554 (2018).
