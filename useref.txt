@@ -1,0 +1,428 @@
+﻿@misc{RN29,
+   title = {All you need about CRISPR:},
+   url = {https://www.addgene.org/guides/crispr/},
+   type = {Web Page}
+}
+
+@article{RN26,
+   title = {CHOPCHOP v3: expanding the CRISPR web toolbox beyond genome editing},
+   type = {Journal Article}
+}
+
+@article{RN28,
+   title = {CHOPCHOP: a CRISPR/Cas9 and TALEN web tool for genome editing},
+   type = {Journal Article}
+}
+
+@misc{RN44,
+   title = {CRISPR},
+   volume = {2022},
+   number = {01/12},
+   url = {https://en.wikipedia.org/wiki/CRISPR},
+   type = {Web Page}
+}
+
+@misc{RN31,
+   title = {DNA:},
+   volume = {2022},
+   number = {01/14},
+   url = {https://en.wikipedia.org/wiki/DNA},
+   type = {Web Page}
+}
+
+@misc{RN35,
+   title = {First genetically modified animal},
+   volume = {2022},
+   number = {10/16},
+   url = {https://www.pnas.org/content/71/4/1250?tab=author-info},
+   type = {Web Page}
+}
+
+@misc{RN36,
+   title = {First GM patent},
+   volume = {2022},
+   number = {01/16},
+   url = {https://patents.google.com/patent/US4259444},
+   type = {Web Page}
+}
+
+@misc{RN49,
+   title = {Genetic Engineering Will Change Everything Forever – CRISPR},
+   volume = {2022},
+   number = {01/14},
+   url = {https://www.youtube.com/watch?v=jAhjPd4uNFY\&t=122s}{\url{https://www.youtube.com/watch?v=jAhjPd4uNFY\&t=122s},
+   type = {Web Page}
+}
+
+@misc{RN42,
+   title = {glowing fish},
+   volume = {2022},
+   number = {01/16},
+   url = {https://www.glofish.com},
+   type = {Web Page}
+}
+
+@misc{RN39,
+   title = {GMOs},
+   volume = {2022},
+   number = {01/16},
+   url = {https://th.schattauer.de/contents/archive/issue/721/manuscript/9641.html},
+   type = {Web Page}
+}
+
+@misc{RN30,
+   title = {Good Overview by Wired:},
+   url = {https://www.wired.com/2015/07/crispr-dna-editing-2/},
+   type = {Web Page}
+}
+
+@misc{RN47,
+   title = {HIV Genes Have Been Cut Out of Live Animals Using CRISPR},
+   volume = {2022},
+   number = {01/16},
+   url = {https://time.com/4340722/hiv-removed-using-crispr/},
+   type = {Web Page}
+}
+
+@misc{RN34,
+   title = {inserting DNA snippets into organisms},
+   volume = {2022},
+   number = {01/16},
+   url = {http://www.genomenewsnetwork.org/resources/timeline/1977_Gilbert.php},
+   type = {Web Page}
+}
+
+@misc{RN1,
+   title = {ParsiLaTeX},
+   publisher = {http://parsilatex.com},
+   type = {Multimedia Application}
+}
+
+@article{RN33,
+   title = {Radiation research},
+   url = {https://www.amusingplanet.com/2013/03/atomic-gardening-breeding-plants-with.html},
+   type = {Journal Article}
+}
+
+@misc{RN2,
+   title = {Selective Breeding},
+   volume = {2022},
+   number = {01/12},
+   url = {https://en.wikipedia.org/wiki/Plant_breeding},
+   type = {Web Page}
+}
+
+@misc{RN32,
+   title = {Understanding DNA},
+   volume = {2022},
+   number = {01/14},
+   url = {https://medlineplus.gov/genetics/understanding/basics/dna/},
+   type = {Web Page}
+}
+
+@misc{RN53,
+   title = {Gene SnipperTM Cas9 Nickase (H840A)},
+   url = {https://www.biovision.com/documentation/datasheets/M1098.pdf},
+   year = {2016},
+   type = {Chart or Table}
+}
+
+@misc{RN50,
+   title = {Building Blocks of the Genetic Code},
+   url = {https://www.ashg.org/discover-genetics/building-blocks/},
+   year = {2019},
+   type = {Chart or Table}
+}
+
+@misc{RN52,
+   title = {What is the Difference Between ZFN TALEN and CRISPR},
+   url = {https://www.differencebetween.com/what-is-the-difference-between-zfn-talen-and-crispr/},
+   year = {2021},
+   type = {Chart or Table}
+}
+
+@article{RN12,
+   author = {Alex Graves, Greg Wayne, Malcolm Reynolds, Tim Harley, Ivo Danihelka, Agnieszka Grabska-Barwińska, Sergio Gómez Colmenarejo, Edward Grefenstette, Tiago Ramalho, John Agapiou, Adrià Puigdomènech Badia, Karl Moritz Hermann, Yori Zwols, Georg Ostrovski, Adam Cain, Helen King, Christopher Summerfield, Phil Blunsom, Koray Kavukcuoglu & Demis Hassabis },
+   title = {Hybrid computing using a neural network with dynamic external memory},
+   journal = {Nature},
+   volume = {538 (7626)},
+   pages = { 471–476},
+   DOI = {10.1038/nature20101},
+   year = {2016},
+   type = {Journal Article}
+}
+
+@misc{RN51,
+   author = {Allison, Hilary},
+   title = {The Differences Between DNA and RNA},
+   url = {https://www.thoughtco.com/dna-versus-rna-608191},
+   year = {2020},
+   type = {Chart or Table}
+}
+
+@misc{RN3,
+   author = {Doudna, Jennifer},
+   title = {TED Talk},
+   month = {September },
+   year = {2015},
+   type = {Podcast}
+}
+
+@article{RN23,
+   author = {Florian Heigwer, Grainne Kerr & Michael Boutros},
+   title = {E-CRISP: fast CRISPR target site identification },
+   type = {Journal Article}
+}
+
+@misc{RN40,
+   author = {G. Bruening, J.M. Lyons},
+   title = {The case of the FLAVR SAVR tomato},
+   url = {https://calag.ucanr.edu/Archive/?article=ca.v054n04p6},
+   year = {2000},
+   type = {Web Page}
+}
+
+@article{RN21,
+   author = {Guohui Chuai, Qi Liu et al.},
+   title = {DeepCRISPR: optimized CRISPR guide RNA design by deep learning},
+   year = {2018},
+   type = {Journal Article}
+}
+
+@article{RN10,
+   author = {H., Blockeel},
+   title = {Hypothesis Space},
+   journal = {Encyclopedia of Machine Learning},
+   pages = {511–513},
+   DOI = {10.1007/978-0-387-30164-8 373},
+   year = {2011},
+   type = {Journal Article}
+}
+
+@article{RN4,
+   author = {Ishino Y, Shinagawa H, Makino K, Amemura M, Nakata A.},
+   title = {Nucleotide sequence of the iap gene, responsible for alkaline phosphatase isozyme conversion in Escherichia coli, and identification of the gene product},
+   journal = {Journal of Bacteriology},
+   volume = {169},
+   pages = {5429–5433},
+   year = {1987},
+   type = {Journal Article}
+}
+
+@article{RN15,
+   author = {Jaegle, Andrew; Gimeno, Felix; Brock, Andrew; Zisserman, Andrew; Vinyals, Oriol; Carreira, Joao},
+   title = {Perceiver: General Perception with Iterative Attention},
+   year = {2021},
+   type = {Journal Article}
+}
+
+@article{RN22,
+   author = {Jean-Paul Concordet, Maximilian Haeussler},
+   title = {CRISPOR: intuitive guide selection for CRISPR/Cas9 genome editing experiments and screens},
+   journal = { Nucleic Acids Research},
+   volume = {46},
+   number = {W1},
+   pages = {W242–W245},
+   DOI = {10.1093/nar/gky354},
+   type = {Journal Article}
+}
+
+@article{RN24,
+   author = {Jeongbin Park, Sangsu Bae, Jin-Soo Kim},
+   title = {Cas-Designer: a web-based tool for choice of CRISPR-Cas9 target sites},
+   journal = {bioinformatics},
+   DOI = {10.1093/bioinformatics/btv537},
+   type = {Journal Article}
+}
+
+@article{RN37,
+   author = {Johnson, I S},
+   title = {Human insulin from recombinant DNA technology},
+   journal = {science},
+   DOI = {10.1126/science.6337396},
+   url = {https://pubmed.ncbi.nlm.nih.gov/6337396/},
+   year = {1983},
+   type = {Journal Article}
+}
+
+@book{RN41,
+   author = {Knoepfler, Paul},
+   title = {GMO Sapiens: The Life-Changing Science of Designer Babies},
+   DOI = {10.1142/9542 },
+   url = {https://www.worldscientific.com/worldscibooks/10.1142/9542},
+   year = {2015},
+   type = {Book}
+}
+
+@article{RN27,
+   author = {Kornel Labun, Tessa G. Montague, James A. Gagnon, Summer B. Thyme, Eivind Valen},
+   title = {CHOPCHOP v2: a web tool for the next generation of CRISPR genome engineering },
+   type = {Journal Article}
+}
+
+@article{RN19,
+   author = {Labuhn, M., Adams, F. F., Ng, M., Knoess, S., Schambach, A., Charpentier, E. M., Heckl, D.},
+   title = {Refined sgRNA efficacy prediction improves large- and small-scale CRISPR–Cas9 applications},
+   journal = {Nucleic Acids Research},
+   DOI = {10.1093/nar/gkx1268},
+   year = {2017},
+   type = {Journal Article}
+}
+
+@misc{RN11,
+   author = {Lecun, Yann},
+   title = {Deep Learning course at NYU, video lecture Week 6},
+   year = {2020},
+   type = {Online Multimedia}
+}
+
+@article{RN43,
+   author = {Ledford, Heidi},
+   title = {CRISPR: gene editing is just the beginning},
+   journal = {nature},
+   volume = {531},
+   pages = {156–159},
+   url = {http://go.nature.com/24Nhykm},
+   year = {2016},
+   type = {Journal Article}
+}
+
+@article{RN45,
+   author = {Ledford, Heidi},
+   title = {HIV cut from cells and rats with CRISPR},
+   journal = {nature},
+   volume = {531},
+   pages = {pages156–159},
+   url = {https://www.nature.com/articles/531156a},
+   year = {2016},
+   type = {Journal Article}
+}
+
+@article{RN5,
+   author = {Mojica, F.J. , Juez, G. & Rodriguez-Valera, F.},
+   title = {Transcription at different salinities of Haloferax mediterranei sequences adjacent to partially modified PstI sites},
+   journal = {Molecular Microbiology},
+   volume = {9},
+   pages = {613–621},
+   year = {1993},
+   type = {Journal Article}
+}
+
+@article{RN7,
+   author = {Opitz, D.; Maclin, R.},
+   title = {Popular ensemble methods: An empirical study},
+   journal = {Journal of Artificial Intelligence Research},
+   volume = {11},
+   pages = {169–198},
+   DOI = {10.1613/jair.614},
+   year = {1999},
+   type = {Journal Article}
+}
+
+@misc{RN6,
+   author = {Patrick D. Hsu, Eric S. Lander, and Feng Zhang},
+   title = {Development and Applications of CRISPR-Cas9 for Genome Engineering},
+   volume = {4.1.3},
+   pages = { Cell 157(6): 1262-1278},
+   year = {2014},
+   type = {Web Page}
+}
+
+@article{RN8,
+   author = {Polikar, R.},
+   title = {Ensemble based systems in decision making},
+   journal = {IEEE Circuits and Systems Magazine},
+   volume = { 6 (3)},
+   pages = {21–45},
+   DOI = {10.1109/MCAS.2006.1688199},
+   year = {2006},
+   type = {Journal Article}
+}
+
+@article{RN46,
+   author = {Rafal Kaminski, Yilan Chen, Tracy Fischer, Ellen Tedaldi, Alessandro Napoli, Yonggang Zhang, Jonathan Karn, Wenhui Hu & Kamel Khalili},
+   title = {Elimination of HIV-1 Genomes from Human T-lymphoid Cells by CRISPR/Cas9 Gene Editing},
+   journal = {Scientific Reports},
+   volume = {6},
+   url = {https://www.nature.com/articles/srep22555},
+   year = {2016},
+   type = {Journal Article}
+}
+
+@article{RN14,
+   author = {Ramachandran, Prajit; Parmar, Niki; Vaswani, Ashish; Bello, Irwan; Levskaya, Anselm; Shlens, Jonathon},
+   title = {Stand-Alone Self-Attention in Vision Models},
+   year = {2019},
+   type = {Journal Article}
+}
+
+@article{RN16,
+   author = {Ray, Tiernan},
+   title = {Google's Supermodel: DeepMind Perceiver is a step on the road to an AI machine that could process anything and everything},
+   journal = {ZDNet},
+   year = {2021},
+   type = {Journal Article}
+}
+
+@article{RN48,
+   author = {Reardon, Sara},
+   title = {First CRISPR clinical trial gets green light from US panel},
+   journal = {Nature},
+   url = {https://www.nature.com/articles/nature.2016.20137},
+   year = {2016},
+   type = {Journal Article}
+}
+
+@article{RN9,
+   author = {Rokach, L.},
+   title = {Ensemble-based classifiers},
+   journal = { Artificial Intelligence Review},
+   volume = {33},
+   pages = {1–39},
+   DOI = {10.1007/s10462-009-9124-7},
+   year = {2010},
+   type = {Journal Article}
+}
+
+@article{RN25,
+   author = {Sangsu Bae 1, Jeongbin Park, Jin-Soo Kim},
+   title = {Cas-OFFinder: a fast and versatile algorithm that searches for potential off-target sites of Cas9 RNA-guided endonucleases},
+   journal = {bioinformatics},
+   DOI = {10.1093/bioinformatics/btu048},
+   type = {Journal Article}
+}
+
+@article{RN18,
+   author = {Stemmer, M., Thumberger, T., del Sol Keyer, M., Wittbrodt, J. and Mateo, J.L.},
+   title = {CCTop: an intuitive, flexible and reliable CRISPR/Cas9 target prediction tool},
+   journal = {PLOS ONE},
+   DOI = {10.1371/journal.pone.0124633},
+   year = {2015},
+   type = {Journal Article}
+}
+
+@article{RN13,
+   author = {Vaswani, Ashish; Shazeer, Noam; Parmar, Niki; Uszkoreit, Jakob; Jones, Llion; Gomez, Aidan N.; Kaiser, Lukasz; Polosukhin, Illia },
+   title = {Attention Is All You Need},
+   year = {2017},
+   type = {Journal Article}
+}
+
+@article{RN38,
+   author = {Walsh, Gary},
+   title = {Therapeutic insulins and their large-scale manufacture},
+   DOI = {10.1007/s00253-004-1809-x},
+   url = {https://pubmed.ncbi.nlm.nih.gov/15580495/},
+   year = {2005 },
+   type = {Journal Article}
+}
+
+@article{RN20,
+   author = {Wong, Jiecong Lin and Ka-Chun},
+   title = {Off-target predictions in CRISPR-Cas9 gene editing using deep learning},
+   journal = {Bioinformatics},
+   DOI = {10.1093/bioinformatics/bty554},
+   year = {2018},
+   type = {Journal Article}
+}
+
