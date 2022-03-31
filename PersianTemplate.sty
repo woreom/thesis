@@ -29,13 +29,15 @@
 \usepackage{graphicx}                    % Images loaded externally
 \usepackage{float}    %To force a figure appear where you want (\begin{figure}[H])
 \usepackage{wrapfig} % put picture next to text
+\usepackage{floatflt}  % put picture next to text
 \usepackage[inline, shortlabels]{enumitem}	            % enumerate enviroment
 \usepackage{colortbl}              % for coloring tables
 \usepackage{hyperref}            % Making links in PDF
 \usepackage[parfill]{parskip}      % Begin paragraphs with an empty line rather than an indent
 \usepackage{tikz}                 % For Making diagrams and graphs
+\usepackage{forest} % drawing forest
 \usepackage{listings}             % For Code Texts
-\usepackage{algorithm}
+\usepackage{algorithm2e}
 \usepackage{algpseudocode}
 \usepackage{chngcntr}            % equations with costume numbering
 \usepackage{ wasysym }     %\fullmoon big circle in calculations
@@ -120,6 +122,19 @@
 
 %-- tikz ----------------------------------------------------------------------------------------
 \usetikzlibrary{arrows}           %easier to use library for making diagrams and graphs
+\usetikzlibrary{fit,positioning}
+
+\tikzset{
+  font=\Large\sffamily\bfseries,
+  red arrow/.style={
+    midway,red,sloped,fill, minimum height=3cm, single arrow, single arrow head extend=.5cm, single arrow head indent=.25cm,xscale=0.3,yscale=0.15,
+    allow upside down
+  },
+  black arrow/.style 2 args={-stealth, shorten >=#1, shorten <=#2},
+  black arrow/.default={1mm}{1mm},
+  tree box/.style={draw, rounded corners, inner sep=1em},
+  node box/.style={white, draw=black, text=black, rectangle, rounded corners},
+}
 %------------------------------------------------------------------------------------------------
 
 %-- setspace ----------------------------------------------------------------------------------
@@ -533,8 +548,7 @@
 \end{center}
 \vspace*{0.03\paperheight}
 \@thesis\\
-عنوان: \@title
-نگارش: \@author
+عنوان: \@title \\ نگارش: \@author
 \vspace*{0.03\paperheight}
 \center
 \begin{tabular}{rp{1cm}cp{1cm}l}
