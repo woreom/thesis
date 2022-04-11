@@ -55,7 +55,7 @@
 \settextfont[Ligatures=TeX,Scale=1, Path = fonts/, UprightFont={*-Regular.ttf},
              BoldFont={*-Bold.ttf},]{Bahij Nazanin}
 \ExplSyntaxOn \cs_set_eq:NN \etex_iffontchar:D \tex_iffontchar:D \cs_undefine:N \c_one \int_const:Nn \c_one { 1 } \ExplSyntaxOff
-\setdigitfont[Ligatures=TeX,Scale=1, Path = fonts/]{Bahij Nazanin-Regular.ttf}
+\setdigitfont[Ligatures=TeX,Scale=1, Path = fonts/]{PersianPagerNumber-Regular.ttf}
 \setlatintextfont[Ligatures=TeX,Scale=1, Path = fonts/, UprightFont={*-Regular.ttf},
              BoldFont={*-Bold.ttf},]{Bahij Nazanin}
 
@@ -568,13 +568,8 @@
 ممتحن داخلی:&& \large{#1} && \signframe \\
 && &&\\
 && &&\\
-ممتحن داخلی:&& \large{#2} && \signframe \\
-&& &&\\
-&& &&\\
 داور خارجی:&& \large{#3} && \signframe \\
 && &&\\
-&& &&\\
-داور خارجی:&& \large{#4} && \signframe \\
 && &&\\
 && && تاریخ: .............................\\
 \end{tabular}}
@@ -587,18 +582,19 @@
 {%set paging
 \renewcommand{\thepage}{\arabic{page}}
 \center
+\vspace*{\fill}
 \begin{center}
 \large\textbf{قدردانی}
 \end{center}
 {#1}
-\\ و تشکر از آقای وفا خلیقی که با طراحی بسته \XePersian\ کمک بزرگی به حروف‌چینی فارسی کردند،\\
 \vspace*{0.03\paperheight}
 \begin{center}
 \Large{
-و تشکر از خداوند.
+با تشکر از خداوند.
 }
 \end{center}
 }
+\vspace*{\fill}
 \end{titlepage}}
 
 \newcommand*{\makethesisenglishtitle}{
